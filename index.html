@@ -560,17 +560,17 @@
     .controls-toggle {
       position: absolute;
       top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
+      right: 16px;
       background: rgba(20, 28, 36, 0.7);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      padding: 10px 32px;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
       z-index: 20;
       color: #fff;
       box-shadow: 0 8px 32px rgba(0,0,0,0.5);
@@ -581,7 +581,7 @@
       background: rgba(30, 40, 50, 0.9);
       border-color: rgba(242, 170, 46, 0.5);
       box-shadow: 0 10px 40px rgba(242, 170, 46, 0.3);
-      transform: translateX(-50%) translateY(-2px);
+      transform: translateY(-2px);
     }
 
     .controls-dropdown {
@@ -692,7 +692,7 @@
       .rule-text p { font-size: 0.8rem; line-height: 1.25; }
       .premium-btn.red-btn { padding: 10px 24px; font-size: 1rem; margin-top: 12px; }
       .glow-btn-inner { padding: 14px 32px; font-size: 1.3rem; }
-      .controls-toggle { padding: 6px 16px; font-size: 0.8rem; border-radius: 12px; top: 12px; }
+      .controls-toggle { width: 36px; height: 36px; font-size: 1.2rem; top: 12px; right: 12px; }
       .controls-dropdown { top: 50px; padding: 16px; gap: 12px; width: 90vw; max-width: 280px; max-height: 80vh; overflow-y: auto; }
       .dropdown-control { min-height: 42px; padding: 0 12px; font-size: 0.85rem; width: 100%; }
       .reset-defaults-btn, .dropdown-restart-btn, .dropdown-sound-btn { padding: 8px; font-size: 0.85rem; margin-top: 4px; }
@@ -702,7 +702,7 @@
 </head>
 <body>
   <div class="board-wrap" id="boardWrap">
-    <button id="controlsToggleBtn" class="controls-toggle">⚙️ Settings</button>
+    <button id="controlsToggleBtn" class="controls-toggle">⚙️</button>
     <div id="controlsDropdown" class="controls-dropdown">
       <label class="bot-control dropdown-control">
         <span>Power <output id="powerMultValue">1.75x</output></span>
