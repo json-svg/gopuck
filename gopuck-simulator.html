@@ -324,7 +324,9 @@
       flex-direction: column;
       max-width: 90%;
       width: 480px;
-      padding: 32px;
+      max-height: 92%;
+      overflow-y: auto;
+      padding: clamp(20px, 4vh, 32px);
       background: rgba(20, 28, 36, 0.85);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 16px;
@@ -399,7 +401,10 @@
       background: #1e2124;
       border: 1px solid rgba(255, 255, 255, 0.08);
       width: 540px;
-      padding: 40px 36px 36px 36px;
+      max-width: 92%;
+      max-height: 94%;
+      overflow-y: auto;
+      padding: clamp(24px, 5vh, 40px) clamp(20px, 4vw, 36px);
       border-radius: 14px;
       box-shadow: 0 30px 80px rgba(0,0,0,0.8);
     }
@@ -441,7 +446,7 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      margin-top: 32px;
+      margin-top: clamp(16px, 4vh, 32px);
       border-radius: 10px;
     }
 
@@ -452,8 +457,8 @@
     }
 
     .rules-title {
-      margin: 0 0 16px 0;
-      font-size: 2rem;
+      margin: 0 0 clamp(8px, 2vh, 16px) 0;
+      font-size: clamp(1.6rem, 5vh, 2rem);
       font-weight: 800;
       color: #ffffff;
       text-align: center;
@@ -464,7 +469,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 24px;
+      margin-bottom: clamp(12px, 3vh, 24px);
       width: 70%;
       align-self: center;
     }
@@ -495,7 +500,7 @@
     .rules-list li {
       display: flex;
       align-items: flex-start;
-      padding: 16px 0;
+      padding: clamp(10px, 2vh, 16px) 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
     
