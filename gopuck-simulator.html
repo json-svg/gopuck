@@ -1587,6 +1587,8 @@
 
       function drag(evt) {
         const point = screenToWorld(evt);
+        point.x = clamp(point.x, 0, 1000);
+        point.y = clamp(point.y, 0, 1000);
         state.pointer = point;
         if (!state.dragging) return;
         evt.preventDefault();
@@ -2614,9 +2616,9 @@
       }
 
       canvas.addEventListener("pointerdown", beginDrag);
-      window.addEventListener("pointermove", drag, { passive: false });
-      window.addEventListener("pointerup", endDrag);
-      window.addEventListener("pointercancel", endDrag);
+      document.addEventListener("pointermove", drag, { passive: false });
+      document.addEventListener("pointerup", endDrag);
+      document.addEventListener("pointercancel", endDrag);
       if (soundBtn) {
         soundBtn.addEventListener("click", () => {
           state.audioEnabled = !state.audioEnabled;
