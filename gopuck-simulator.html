@@ -27,7 +27,7 @@
       margin: 0;
       min-height: 100vh;
       overflow: hidden;
-      background: transparent;
+      background: #ffffff;
       color: var(--ink);
       font-family: 'Outfit', Inter, ui-sans-serif, system-ui, sans-serif;
       display: flex;
@@ -2249,17 +2249,35 @@
 
       function drawBoard() {
         ctx.save();
-        roundRect(20, 20, 960, 960, 54);
+        roundRect(8, 8, 984, 984, 54);
         const wood = ctx.createLinearGradient(80, 40, 920, 980);
-        wood.addColorStop(0, "#d7aa74");
-        wood.addColorStop(0.35, "#bb8752");
-        wood.addColorStop(0.7, "#e0b77d");
-        wood.addColorStop(1, "#a56d3f");
+        wood.addColorStop(0, "#a46c3b");
+        wood.addColorStop(0.35, "#7a4621");
+        wood.addColorStop(0.7, "#8e5a2e");
+        wood.addColorStop(1, "#542e12");
         ctx.fillStyle = wood;
-        ctx.fill();
         ctx.shadowColor = "rgba(0,0,0,0.5)";
         ctx.shadowBlur = 28;
         ctx.shadowOffsetY = 20;
+        ctx.fill();
+
+        ctx.save();
+        ctx.shadowColor = "transparent";
+        ctx.clip();
+        ctx.globalAlpha = 0.2;
+        for (let i = 0; i < 90; i++) {
+          const y = i * 12 + Math.sin(i * 1.5) * 5;
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          for (let x = 0; x <= 1000; x += 30) {
+            ctx.lineTo(x, y + Math.sin(x * 0.015 + i) * 6);
+          }
+          ctx.strokeStyle = i % 3 === 0 ? "#2a1204" : "#d9a175";
+          ctx.lineWidth = i % 3 === 0 ? 2 : 1;
+          ctx.stroke();
+        }
+        ctx.restore();
+
         ctx.strokeStyle = "rgba(255,255,255,0.18)";
         ctx.lineWidth = 3;
         ctx.stroke();
